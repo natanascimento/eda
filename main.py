@@ -61,7 +61,19 @@ class EstruturasDeDados:
     self.AvaliarLista(lista)
     lista.inserir(2, self.loja10)
     self.AvaliarLista(lista)
-
+    
+    removido = lista.remover_do_inicio()
+    print("Item removido: {}".format(removido))
+    self.AvaliarLista(lista)
+    
+    removido = lista.remover_do_fim()
+    print("Item removido: {}".format(removido))
+    self.AvaliarLista(lista)
+  
+    removido = lista.remover(0)
+    print("Item removido da posicao 0: {}".format(removido))
+    self.AvaliarLista(lista)
+    
   def ValidarItensEmRange(self, lista):
     self._min = int(input("Informe o valor minimo do range: "))
     self._max = int(input("Informe o valor maximo do range: "))
