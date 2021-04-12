@@ -5,4 +5,4 @@ class Loja:
     self._endereco = endereco
   
   def __repr__(self):
-      return "{} \n {}".format(self._nome, self._endereco)
+      return "{} - {}".format(self._nome, self._endereco)
