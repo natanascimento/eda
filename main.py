@@ -2,10 +2,10 @@ from EstruturasDeDados.ListaLigada.ListaLigada import ListaLigada
 from EstruturasDeDados.ListaDuplamenteLigada.ListaDuplamenteLigada import ListaDuplamenteLigada
 from EstruturasDeDados.Pilha.Pilha import Pilha
 from EstruturasDeDados.Fila.Fila import Fila
+from EstruturasDeDados.Arvore.Arvore import Arvore
 from Loja.Loja import Loja
 from Fase.Fase import Fase
 from Pedido.Pedido import Pedido
-
 
 class EstruturasDeDados:
   
@@ -151,9 +151,39 @@ class EstruturasDeDados:
     print("Pedido {} finalizado".format(pedido))
     print("Está vazia? {}".format(pedidos.vazia))
     
+  def ArvoreInstance(self):
+    print("##### ARVORE #####")
+    livraria = Arvore('Livros')
+    livraria.raiz.inserir_filho("Gastronomia")
+    livraria.raiz.inserir_filho("Informatica")
+    livraria.imprimir()
+    
+    encontrado = livraria.localizar_node("Livros")
+    print("Encontrado: {}".format(encontrado))
+    encontrado = livraria.localizar_node("Gastronomia")
+    print("Encontrado: {}".format(encontrado))
+    encontrado = livraria.localizar_node("Informatica")
+    print("Encontrado: {}".format(encontrado))
+    encontrado = livraria.localizar_node("Turismo")
+    print("Encontrado: {}".format(encontrado))
+    
+    livraria.inserir_node("Informatica", "Linguagem de programacao")
+    livraria.inserir_node("Linguagem de programacao", "Python")
+    livraria.inserir_node("Gastronomia", "Mexicana")
+    livraria.imprimir()
+    
+    removido = livraria.remover_node("Mexicana")
+    print("Removido: {}".format(removido))
+    
+    removido = livraria.remover_node("Informatica")
+    print("Removido: {}".format(removido))
+    
+    livraria.imprimir()
+    
 if __name__ == '__main__':
   main = EstruturasDeDados()
-  main.ListaLigadaInstance()
-  main.ListaDuplamenteLigadaInstance()
-  main.PilhaInstance()
-  main.FilaInstance()
+  #main.ListaLigadaInstance()
+  #main.ListaDuplamenteLigadaInstance()
+  #main.PilhaInstance()
+  #main.FilaInstance()
+  main.ArvoreInstance()
