@@ -182,8 +182,8 @@ class EstruturasDeDados:
     
 if __name__ == '__main__':
   main = EstruturasDeDados()
-  #main.ListaLigadaInstance()
-  #main.ListaDuplamenteLigadaInstance()
-  #main.PilhaInstance()
-  #main.FilaInstance()
+  main.ListaLigadaInstance()
+  main.ListaDuplamenteLigadaInstance()
+  main.PilhaInstance()
+  main.FilaInstance()
   main.ArvoreInstance()
