@@ -1,6 +1,9 @@
 from EstruturasDeDados.ListaLigada.ListaLigada import ListaLigada
 from EstruturasDeDados.ListaDuplamenteLigada.ListaDuplamenteLigada import ListaDuplamenteLigada
+from EstruturasDeDados.Pilha.Pilha import Pilha
 from Loja.Loja import Loja
+from Fase.Fase import Fase
+
 
 class EstruturasDeDados:
   
@@ -16,6 +19,11 @@ class EstruturasDeDados:
     self.loja8 = Loja("Padaria", "Rua Matos, 25")
     self.loja9 = Loja("Mercadinho", "Avenida Rio Branco, 1593")
     self.loja10 = Loja("Hortifruti", "Avenida Olimpia, 759")
+    # Instanciando fases
+    self.fase1 = Fase('Floresta', 300, -100)
+    self.fase2 = Fase('Castelo', 400, -200)
+    self.fase3 = Fase('Caverna', 100, -30)
+    self.fase4 = Fase('Guerra', 3000, -400)
     
   def AvaliarLista(self, lista):
     print("\nQuantidade de elementos na lista: {}".format(lista.quantidade))
@@ -79,7 +87,21 @@ class EstruturasDeDados:
     self._max = int(input("Informe o valor maximo do range: "))
     print("Elementos da Lista no range: {}".format([lista.item(i) for i in range(self._min, self._max)]))
     
+  def PilhaInstance(self):
+    fases = Pilha()
+    fases.empilha(self.fase1)
+    fases.empilha(self.fase2)
+    fases.empilha(self.fase3)
+    fases.empilha(self.fase4)
+    falhou = fases.desempilha()
+    print("Falhou na fase {}".format(falhou))
+    print("Voltou para a fase {}".format(fases.topo))
+    falhou = fases.desempilha()
+    print("Falhou na fase {}".format(falhou))
+    print("Voltou para a fase {}".format(fases.topo))
+    
 if __name__ == '__main__':
   main = EstruturasDeDados()
   #main.ListaLigadaInstance()
-  main.ListaDuplamenteLigadaInstance()
+  #main.ListaDuplamenteLigadaInstance()
+  main.PilhaInstance()
